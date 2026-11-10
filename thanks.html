@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תודה! | toMix Card לעסקים</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="toMix Card – הגיפט קארד של החוויות. מתנה לעובדים: כרטיס נטען אחד להופעות, קולינריה, ספא, סיורים ועוד.">
+<meta property="og:title" content="toMix Card לעסקים">
+<meta property="og:description" content="המתנה לעובדים שלא נשארת במגירה. נשארת חוויה.">
+<meta name="theme-color" content="#0B0010">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '719435512075861');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=719435512075861&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&amp;family=Heebo:wght@500;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0010}
+a{color:#FF4D97}a:hover{color:#FFFFFF}
+*{box-sizing:border-box}
+.tm{font-family:Assistant,Heebo,sans-serif;color:#FFFFFF;background:#0B0010;overflow:hidden;direction:rtl}
+.disp{font-family:Heebo,Assistant,sans-serif;font-weight:900;letter-spacing:-0.02em;line-height:0.95}
+
+/* ambient blobs */
+@keyframes blobA{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-120px,80px) scale(1.15)}66%{transform:translate(60px,-40px) scale(0.9)}}
+@keyframes blobB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(140px,-100px) scale(1.2)}}
+@keyframes blobC{0%,100%{transform:translate(0,0) scale(1.1)}50%{transform:translate(-80px,-60px) scale(0.85)}}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;pointer-events:none}
+.blobA{animation:blobA 16s ease-in-out infinite}
+.blobB{animation:blobB 19s ease-in-out infinite}
+.blobC{animation:blobC 13s ease-in-out infinite}
+
+/* grain grid */
+.gridbg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%);pointer-events:none}
+
+/* hero entrance */
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes wordIn{from{opacity:0;transform:translateY(110%) rotate(4deg)}to{opacity:1;transform:none}}
+.rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.7s}.d6{animation-delay:.85s}
+.wmask{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+.word{display:inline-block;animation:wordIn 1s cubic-bezier(.2,.9,.2,1) both}
+
+/* pink marker highlight */
+@keyframes mark{from{background-size:0% 100%}to{background-size:100% 100%}}
+.mark{background-image:linear-gradient(#FF006F,#FF006F);background-repeat:no-repeat;background-position:100% 0;background-size:0% 100%;animation:mark .8s 1.1s cubic-bezier(.7,0,.2,1) forwards;padding:0 .12em;margin:0 -.04em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+/* card */
+@keyframes floatY{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-22px) rotate(-3deg)}}
+@keyframes shine{0%{transform:translateX(-160%) skewX(-20deg)}55%,100%{transform:translateX(260%) skewX(-20deg)}}
+@keyframes ring{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes ringR{from{transform:rotate(360deg)}to{transform:rotate(0)}}
+.floaty{animation:floatY 6s ease-in-out infinite}
+.shine{position:absolute;top:-20%;bottom:-20%;width:38%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);animation:shine 4.5s ease-in-out infinite}
+.ring{animation:ring 38s linear infinite}
+.ringR{animation:ringR 26s linear infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.chip{position:absolute;padding:10px 18px;border-radius:999px;font-weight:800;font-size:16px;white-space:nowrap;animation:bob 4s ease-in-out infinite;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.6) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+.star{position:absolute;animation:twinkle 3s ease-in-out infinite}
+
+/* marquee */
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@keyframes marqR{from{transform:translateX(50%)}to{transform:translateX(0)}}
+.marq{display:flex;width:max-content;animation:marq 34s linear infinite}
+.marqR{display:flex;width:max-content;animation:marqR 40s linear infinite}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 30px;border-radius:999px;background:#E0005E;color:#FFFFFF;font-family:Heebo,sans-serif;font-weight:800;font-size:19px;text-decoration:none;border:0;cursor:pointer;position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.btn:hover{color:#FFFFFF;transform:translateY(-3px) scale(1.02);box-shadow:0 18px 40px rgba(255,0,111,.45)}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transform:translateX(-120%);transition:transform .6s}
+.btn:hover::after{transform:translateX(120%)}
+.btn:focus-visible,.fin:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
+.ghost{background:transparent;border:2px solid rgba(255,255,255,.35)}
+.ghost:hover{border-color:#FFFFFF;box-shadow:none}
+
+/* form */
+.fin{width:100%;height:54px;border-radius:14px;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#FFFFFF;font-family:Assistant,sans-serif;font-size:17px;padding:0 16px;transition:border-color .2s,background .2s,box-shadow .2s;direction:rtl}
+.fin::placeholder{color:rgba(255,255,255,.55)}
+.fin:focus{outline:none;border-color:#FF006F;background:rgba(255,0,111,.08);box-shadow:0 0 0 4px rgba(255,0,111,.18)}
+.flab{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,.82);margin-bottom:6px}
+@keyframes borderSpin{to{--a:360deg}}
+.glowbox{position:relative;border-radius:28px;padding:2px;background:conic-gradient(from var(--a,0deg),#FF006F,#7B2CFF,#22003A,#FF006F);animation:borderSpin 6s linear infinite}
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}60%{transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+.pop{animation:pop .6s cubic-bezier(.2,.9,.3,1.3) both}
+
+/* feature tiles */
+.tile{position:relative;border-radius:28px;padding:36px;background:#160022;border:1px solid rgba(255,255,255,.08);overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s}
+.tile:hover{transform:translateY(-10px) rotate(-1deg);border-color:#FF006F}
+.tile .tglow{position:absolute;width:280px;height:280px;border-radius:50%;background:#FF006F;filter:blur(80px);opacity:0;top:-120px;left:-80px;transition:opacity .5s}
+.tile:hover .tglow{opacity:.35}
+.ticon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:#FF006F;color:#0B0010;transition:transform .5s cubic-bezier(.2,.9,.3,1.4)}
+.tile:hover .ticon{transform:rotate(-12deg) scale(1.1)}
+
+/* occasions */
+.occ{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:200px;padding:26px;border-radius:24px;overflow:hidden;background:#1A0029;border:1px solid rgba(255,255,255,.08);transition:transform .35s cubic-bezier(.2,.8,.2,1),background .35s}
+.occ:hover{transform:scale(1.04);background:#FF006F}
+.occ:hover .onum{color:#0B0010;transform:translateY(-6px)}
+.onum{position:absolute;top:18px;left:22px;font-family:Heebo,sans-serif;font-weight:900;font-size:64px;color:rgba(255,255,255,.12);transition:all .35s}
+
+/* phone messages */
+@keyframes msg{0%,8%{opacity:0;transform:translateY(20px) scale(.9)}14%,88%{opacity:1;transform:none}96%,100%{opacity:0;transform:translateY(-8px)}}
+.msg{animation:msg 9s cubic-bezier(.2,.8,.2,1) infinite both}
+.m1{animation-delay:0s}.m2{animation-delay:.9s}.m3{animation-delay:1.8s}
+@keyframes typing{0%,100%{opacity:.25}50%{opacity:1}}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.7);animation:typing 1.2s infinite}
+
+/* steps line */
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.stepn{width:56px;height:56px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Heebo,sans-serif;font-weight:900;font-size:22px;background:#0B0010;border:2px solid #FF006F;color:#FFFFFF;transition:background .3s,transform .3s}
+.step:hover .stepn{background:#FF006F;transform:scale(1.1)}
+
+/* kinetic outline type */
+.outline{color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.35)}
+
+/* scroll reveal (progressive) */
+@supports (animation-timeline: view()){
+  @keyframes rv{from{opacity:0;transform:translateY(70px) scale(.97)}to{opacity:1;transform:none}}
+  @keyframes rvSide{from{opacity:0;transform:translateX(-90px) rotate(-3deg)}to{opacity:1;transform:none}}
+  @keyframes skew{from{transform:translateX(-12%)}to{transform:translateX(12%)}}
+  .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+  .rvS{animation:rvSide linear both;animation-timeline:view();animation-range:entry 0% entry 80%}
+  .parx{animation:skew linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+}
+
+/* youtube */
+.ytbtn{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:transparent;display:block}
+.ytbtn img{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.ytbtn:hover img{transform:scale(1.05)}
+.ytcircle{position:absolute;top:50%;left:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:#E0005E;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(255,0,111,.5);transition:transform .3s cubic-bezier(.2,.9,.3,1.4)}
+.ytbtn:hover .ytcircle{transform:scale(1.12)}
+@keyframes ytPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.2);opacity:0}}
+.ytring{position:absolute;top:50%;left:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;border:3px solid #FF006F;animation:ytPulse 1.8s ease-out infinite}
+.ytbtn:focus-visible{outline:3px solid #FFFFFF;outline-offset:-6px}
+#yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.still *,.still *::before,.still *::after{animation:none !important;transition:none !important}
+.still .mark{background-size:100% 100%}
+@media (prefers-reduced-motion: reduce){.tm *,.tm *::before,.tm *::after{animation:none !important;transition:none !important}.tm .mark{background-size:100% 100%}}
+@media (max-width:760px){.hide-sm{display:none !important}}
+</style>
+
+<style>
+.tychip{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:800;font-size:17px;text-decoration:none;border:1px solid rgba(255,255,255,.2);transition:transform .3s cubic-bezier(.2,.9,.3,1.4),box-shadow .3s}
+.tychip:hover{transform:translateY(-4px) rotate(-2deg);box-shadow:0 14px 30px rgba(255,0,111,.35)}
+.tychip:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
+@keyframes confetti{0%{transform:translateY(-10vh) rotate(0)}100%{transform:translateY(110vh) rotate(720deg)}}
+.cf{position:absolute;top:0;width:10px;height:16px;border-radius:3px;animation:confetti linear infinite;opacity:.85}
+@keyframes checkDraw{from{stroke-dashoffset:40}to{stroke-dashoffset:0}}
+.chk path{stroke-dasharray:40;stroke-dashoffset:40;animation:checkDraw .7s .6s cubic-bezier(.6,0,.2,1) forwards}
+</style>
+</head>
+<body>
+<div class="tm" style="width: 100%; min-height: 100vh; position: relative; display: flex; flex-direction: column">
+  <div class="blob blobA" style="width: 620px; height: 620px; background: #FF006F; top: -200px; right: -180px"></div>
+  <div class="blob blobB" style="width: 560px; height: 560px; background: #5B1BFF; bottom: -200px; left: -200px"></div>
+  <div class="gridbg"></div>
+  <div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none">
+    <span class="cf" style="left: 6%; background: #FF006F; animation-duration: 7s; animation-delay: -1s"></span>
+    <span class="cf" style="left: 18%; background: #FFFFFF; animation-duration: 9s; animation-delay: -4s"></span>
+    <span class="cf" style="left: 29%; background: #7B2CFF; animation-duration: 6s; animation-delay: -2s"></span>
+    <span class="cf" style="left: 41%; background: #FF4D97; animation-duration: 8s; animation-delay: -6s"></span>
+    <span class="cf" style="left: 57%; background: #FFFFFF; animation-duration: 7.5s; animation-delay: -3s"></span>
+    <span class="cf" style="left: 68%; background: #FF006F; animation-duration: 10s; animation-delay: -5s"></span>
+    <span class="cf" style="left: 79%; background: #7B2CFF; animation-duration: 6.5s; animation-delay: -1.5s"></span>
+    <span class="cf" style="left: 91%; background: #FF4D97; animation-duration: 8.5s; animation-delay: -7s"></span>
+  </div>
+
+  <header style="position: relative; z-index: 5; width: 100%; max-width: 1280px; margin: 0 auto; padding: 22px 24px; display: flex; align-items: center; gap: 10px">
+    <a href="index.html" style="font-family: Heebo, sans-serif; font-weight: 900; font-size: 30px; letter-spacing: -0.03em; direction: ltr; color: #FFFFFF; text-decoration: none">toMix</a>
+    <span style="font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.85)">לעסקים ולחברות</span>
+  </header>
+
+  <main style="position: relative; z-index: 2; flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px 100px">
+    <div style="max-width: 860px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 28px">
+      <div class="rise" style="width: 96px; height: 96px; border-radius: 50%; background: #FF006F; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 14px rgba(255,0,111,.18), 0 20px 60px rgba(255,0,111,.5)">
+        <svg class="chk" aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h1 class="disp" style="margin: 0; font-size: clamp(44px, 7vw, 96px)">
+        <span class="wmask"><span class="word" style="animation-delay: .2s">תודה<span id="tyName"></span>!</span></span><br>
+        <span class="wmask"><span class="word mark" style="animation-delay: .35s">הפרטים אצלנו.</span></span>
+      </h1>
+      <p class="rise d3" style="margin: 0; max-width: 620px; font-size: 21px; line-height: 1.55; color: rgba(255,255,255,.82)">נציג/ת toMix לעסקים יחזרו אליכם בהקדם עם הצעה מותאמת לחברה. בינתיים – בואו להציץ בחוויות שהעובדים שלכם יוכלו לבחור מהן.</p>
+      <a href="https://www.to-mix.co.il/?utm_source=tomix-card-business&amp;utm_medium=landing&amp;utm_campaign=thank-you" class="btn rise d4" style="min-height: 64px; font-size: 21px; padding: 0 40px">
+        לעולם החוויות של toMix
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+      </a>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px">
+        <a class="tychip rise d3" href="https://www.to-mix.co.il/?utm_source=tomix-card-business&amp;utm_medium=landing&amp;utm_campaign=thank-you" style="background: #FFFFFF; color: #0B0010">במה ומופעים</a>
+        <a class="tychip rise d4" href="https://www.to-mix.co.il/?utm_source=tomix-card-business&amp;utm_medium=landing&amp;utm_campaign=thank-you" style="background: #FF006F; color: #FFFFFF">קולינריה</a>
+        <a class="tychip rise d5" href="https://www.to-mix.co.il/?utm_source=tomix-card-business&amp;utm_medium=landing&amp;utm_campaign=thank-you" style="background: #22003A; color: #FFFFFF">ספא וולנס</a>
+        <a class="tychip rise d6" href="https://www.to-mix.co.il/?utm_source=tomix-card-business&amp;utm_medium=landing&amp;utm_campaign=thank-you" style="background: #7B2CFF; color: #FFFFFF">סיורים וסדנאות</a>
+        <a class="tychip rise d6" href="https://www.to-mix.co.il/?utm_source=tomix-card-business&amp;utm_medium=landing&amp;utm_campaign=thank-you" style="background: #FFFFFF; color: #0B0010">טבע ואקסטרים</a>
+        <a class="tychip rise d6" href="https://www.to-mix.co.il/?utm_source=tomix-card-business&amp;utm_medium=landing&amp;utm_campaign=thank-you" style="background: #FF006F; color: #FFFFFF">מבשלות ויקבים</a>
+        <a class="tychip rise d6" href="https://www.to-mix.co.il/?utm_source=tomix-card-business&amp;utm_medium=landing&amp;utm_campaign=thank-you" style="background: #22003A; color: #FFFFFF">עד הבית</a>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+(function () {
+  try {
+    var n = sessionStorage.getItem('tm_name');
+    if (n) document.getElementById('tyName').textContent = ' ' + n;
+    if (sessionStorage.getItem('tm_lead') === '1') {
+      sessionStorage.removeItem('tm_lead');
+      if (window.fbq) fbq('track', 'Lead', { content_name: 'toMix Card לעסקים' });
+    }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

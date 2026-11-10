@@ -8,6 +8,24 @@
 <meta property="og:title" content="toMix Card לעסקים">
 <meta property="og:description" content="המתנה לעובדים שלא נשארת במגירה. נשארת חוויה.">
 <meta name="theme-color" content="#0B0010">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '719435512075861');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=719435512075861&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&amp;family=Heebo:wght@500;800;900&amp;display=swap" rel="stylesheet">
 <style>
@@ -120,6 +138,16 @@ a{color:#FF4D97}a:hover{color:#FFFFFF}
   .parx{animation:skew linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
 }
 
+/* youtube */
+.ytbtn{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:transparent;display:block}
+.ytbtn img{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.ytbtn:hover img{transform:scale(1.05)}
+.ytcircle{position:absolute;top:50%;left:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:#E0005E;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(255,0,111,.5);transition:transform .3s cubic-bezier(.2,.9,.3,1.4)}
+.ytbtn:hover .ytcircle{transform:scale(1.12)}
+@keyframes ytPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.2);opacity:0}}
+.ytring{position:absolute;top:50%;left:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;border:3px solid #FF006F;animation:ytPulse 1.8s ease-out infinite}
+.ytbtn:focus-visible{outline:3px solid #FFFFFF;outline-offset:-6px}
+#yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .still *,.still *::before,.still *::after{animation:none !important;transition:none !important}
 .still .mark{background-size:100% 100%}
 @media (prefers-reduced-motion: reduce){.tm *,.tm *::before,.tm *::after{animation:none !important;transition:none !important}.tm .mark{background-size:100% 100%}}
@@ -196,7 +224,7 @@ a{color:#FF4D97}a:hover{color:#FFFFFF}
                 <span style="font-family: Heebo, sans-serif; font-weight: 900; font-size: 44px; letter-spacing: -0.04em; line-height: 1">toMix</span>
                 <span style="font-family: Heebo, sans-serif; font-weight: 900; font-size: 24px; padding: 2px 10px 4px; border-radius: 8px; background: #FF006F; color: #FFFFFF; transform: rotate(-6deg); line-height: 1.1">card</span>
               </div>
-              <div style="width: 46px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, #F5D98B, #B8913A); box-shadow: inset 0 0 0 1px rgba(0,0,0,.2)"></div>
+              
             </div>
             <div style="display: flex; justify-content: space-between; align-items: flex-end; direction: rtl">
               <div>
@@ -228,27 +256,18 @@ a{color:#FF4D97}a:hover{color:#FFFFFF}
         </div>
         <div style="flex: 3 1 620px; min-width: 0">
           <div id="formWrap">
-            <form id="leadForm" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; align-items: end">
+            <form id="leadForm" novalidate style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; align-items: end">
               <div><label class="flab" for="f-name">שם מלא</label><input class="fin" id="f-name" name="name" type="text" required autocomplete="name" placeholder="ישראל ישראלי"></div>
               <div><label class="flab" for="f-phone">טלפון</label><input class="fin" id="f-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" pattern="[0-9\-\+ ]{9,15}" placeholder="050-0000000" style="direction: ltr; text-align: right"></div>
               <div><label class="flab" for="f-email">מייל</label><input class="fin" id="f-email" name="email" type="email" required autocomplete="email" placeholder="name@company.co.il" style="direction: ltr; text-align: right"></div>
               <div><label class="flab" for="f-company">חברה</label><input class="fin" id="f-company" name="company" type="text" required autocomplete="organization" placeholder="שם החברה"></div>
-              <button type="submit" class="btn" style="grid-column: 1 / -1; min-height: 60px; font-size: 20px">
+              <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden" aria-hidden="true"><label for="f-web">אתר</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+              <button type="submit" id="sendBtn" class="btn" style="grid-column: 1 / -1; min-height: 60px; font-size: 20px">
                 שלחו לי הצעה לעובדים
                 <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
               </button>
             </form>
-          </div>
-          <div id="thanks" hidden>
-            <div class="pop" style="display: flex; align-items: center; gap: 20px; padding: 18px 0">
-              <div style="width: 72px; height: 72px; flex: none; border-radius: 50%; background: #FF006F; display: flex; align-items: center; justify-content: center">
-                <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-              </div>
-              <div>
-                <div class="disp" style="font-size: 34px">תודה <span id="tName"></span>! הפרטים התקבלו.</div>
-                <p style="margin: 8px 0 0; font-size: 18px; color: rgba(255,255,255,.78)">נחזור אליכם בהקדם עם הצעה מותאמת ל<span id="tCo"></span>.</p>
-              </div>
-            </div>
+            <p id="formErr" role="alert" hidden style="margin: 12px 0 0; color: #FF8AB8; font-weight: 700">משהו השתבש בשליחה. נסו שוב בעוד רגע.</p>
           </div>
         </div>
       </div>
@@ -278,6 +297,19 @@ a{color:#FF4D97}a:hover{color:#FFFFFF}
     <h2 class="disp" style="margin: 0; font-size: clamp(40px, 5vw, 72px)">למה חוויה<br><span class="outline">ולא עוד שובר?</span></h2>
     <p style="margin: 0; max-width: 440px; font-size: 19px; line-height: 1.55; color: rgba(255,255,255,.75)">מוצר נשכח אחרי שבוע. ערב בהופעה, ארוחת שף או יום ספא נשארים כזיכרון – ומתחברים לשם של החברה שנתנה אותם.</p>
   </div>
+  <div class="rv" style="margin-bottom: 56px">
+    <div class="glowbox" style="border-radius: 30px">
+      <div id="yt" style="position: relative; aspect-ratio: 16 / 9; border-radius: 28px; overflow: hidden; background: #12001D">
+        <button id="ytPlay" type="button" class="ytbtn" aria-label="ניגון הסרטון של toMix Card">
+          <img src="https://i.ytimg.com/vi/RXbBlem-SVc/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/RXbBlem-SVc/hqdefault.jpg'" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+          <span style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11,0,16,.75), rgba(11,0,16,.1) 55%)"></span>
+          <span class="ytring"></span>
+          <span class="ytcircle"><svg aria-hidden="true" width="38" height="38" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M8 5.5v13l11-6.5z"></path></svg></span>
+          <span class="disp" style="position: absolute; bottom: 28px; right: 32px; font-size: clamp(22px, 3vw, 36px); color: #FFFFFF">ככה זה נראה כשנותנים חוויה</span>
+        </button>
+      </div>
+    </div>
+  </div>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
     <div class="tile rv">
       <div class="tglow"></div>
@@ -300,123 +332,8 @@ a{color:#FF4D97}a:hover{color:#FFFFFF}
   </div>
 </section>
 
-<!-- ============ HOW IT WORKS ============ -->
-<section style="position: relative; padding: 100px 24px; background: #22003A; overflow: hidden">
-  <div class="blob blobB" style="width: 500px; height: 500px; background: #FF006F; opacity: .3; bottom: -200px; right: -100px"></div>
-  <div style="position: relative; max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
-    <div style="flex: 1 1 520px; min-width: 0">
-      <h2 class="disp rv" style="margin: 0 0 48px; font-size: clamp(40px, 5vw, 68px)">ארבעה צעדים<br><span style="color: #FF006F">ועשרות עובדים מחייכים</span></h2>
-      <div style="position: relative; display: flex; flex-direction: column; gap: 34px">
-        <div style="position: absolute; top: 28px; bottom: 28px; right: 27px; width: 2px; background: linear-gradient(#FF006F, rgba(255,0,111,.1))"></div>
-        <div class="step rvS" style="position: relative; display: flex; gap: 22px; align-items: flex-start">
-          <div class="stepn">1</div>
-          <div><h3 class="disp" style="margin: 6px 0 8px; font-size: 26px">קובעים סכום לכל עובד</h3><p style="margin: 0; font-size: 18px; line-height: 1.5; color: rgba(255,255,255,.75)">אחיד לכולם או לפי צוותים – אתם מחליטים.</p></div>
-        </div>
-        <div class="step rvS" style="position: relative; display: flex; gap: 22px; align-items: flex-start">
-          <div class="stepn">2</div>
-          <div><h3 class="disp" style="margin: 6px 0 8px; font-size: 26px">מוסיפים ברכה אישית</h3><p style="margin: 0; font-size: 18px; line-height: 1.5; color: rgba(255,255,255,.75)">טקסט, תמונה או סרטון מהחברה – כדי שהמתנה תרגיש שלכם.</p></div>
-        </div>
-        <div class="step rvS" style="position: relative; display: flex; gap: 22px; align-items: flex-start">
-          <div class="stepn">3</div>
-          <div><h3 class="disp" style="margin: 6px 0 8px; font-size: 26px">בוחרים מתי לשלוח</h3><p style="margin: 0; font-size: 18px; line-height: 1.5; color: rgba(255,255,255,.75)">מיד, או בתאריך ובשעה שתבחרו – בדיוק לחג או לאירוע.</p></div>
-        </div>
-        <div class="step rvS" style="position: relative; display: flex; gap: 22px; align-items: flex-start">
-          <div class="stepn">4</div>
-          <div><h3 class="disp" style="margin: 6px 0 8px; font-size: 26px">העובדים בוחרים חוויה</h3><p style="margin: 0; font-size: 18px; line-height: 1.5; color: rgba(255,255,255,.75)">הכרטיס מגיע ב-SMS, וואטסאפ, מייל או מודפס – והם מממשים באתר toMix.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- phone -->
-    <div class="rv" style="flex: 1 1 360px; min-width: 0; display: flex; justify-content: center">
-      <div style="position: relative; width: 320px; height: 620px; border-radius: 48px; background: #0B0010; border: 10px solid #2C2C2C; box-shadow: 0 40px 100px rgba(0,0,0,.6), 0 0 0 2px rgba(255,255,255,.08); overflow: hidden">
-        <div style="position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 100px; height: 26px; border-radius: 20px; background: #000000"></div>
-        <div style="padding: 64px 18px 18px; display: flex; flex-direction: column; gap: 14px; height: 100%; background: linear-gradient(#170024, #0B0010)">
-          <div style="text-align: center; font-size: 13px; font-weight: 700; color: rgba(255,255,255,.55)">הודעה חדשה</div>
-          <div class="msg m1" style="align-self: flex-start; max-width: 85%; padding: 14px 16px; border-radius: 20px 20px 20px 6px; background: rgba(255,255,255,.1); font-size: 16px; line-height: 1.45">היי דנה! קיבלת מתנה מ[שם החברה]</div>
-          <div class="msg m2" style="align-self: flex-start; width: 85%; border-radius: 20px; overflow: hidden; background: linear-gradient(135deg, #2A0C6B, #0B0225); position: relative; aspect-ratio: 1.586; box-shadow: 0 12px 30px rgba(0,0,0,.4)">
-            <div style="position: absolute; width: 160px; height: 160px; border-radius: 50%; background: #FF006F; filter: blur(40px); opacity: .6; bottom: -80px; left: -40px"></div>
-            <div style="position: absolute; inset: 0; padding: 16px; display: flex; align-items: flex-start; gap: 6px; direction: ltr">
-              <span style="font-family: Heebo, sans-serif; font-weight: 900; font-size: 24px; letter-spacing: -0.04em">toMix</span>
-              <span style="font-family: Heebo, sans-serif; font-weight: 900; font-size: 14px; padding: 1px 7px 3px; border-radius: 5px; background: #FF006F; transform: rotate(-6deg)">card</span>
-            </div>
-          </div>
-          <div class="msg m3" style="align-self: flex-start; max-width: 85%; padding: 14px 16px; border-radius: 20px 20px 20px 6px; background: rgba(255,255,255,.1); font-size: 16px; line-height: 1.45">תודה על שנה מטורפת! תבחרי חוויה שאת אוהבת</div>
-          <div style="margin-top: auto; display: flex; gap: 6px; padding: 14px 18px; border-radius: 20px; background: rgba(255,255,255,.08); align-self: flex-start">
-            <span class="dot"></span><span class="dot" style="animation-delay: .2s"></span><span class="dot" style="animation-delay: .4s"></span>
-          </div>
-          <div style="height: 54px; border-radius: 999px; background: #E0005E; display: flex; align-items: center; justify-content: center; font-family: Heebo, sans-serif; font-weight: 800; font-size: 17px">לבחירת החוויה</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OCCASIONS ============ -->
-<section style="max-width: 1280px; margin: 0 auto; padding: 110px 24px 80px">
-  <h2 class="disp rv" style="margin: 0 0 48px; font-size: clamp(40px, 5vw, 72px)">לכל רגע<br><span class="outline">שבו אומרים תודה</span></h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px">
-    <div class="occ rv"><span class="onum">01</span><div class="disp" style="font-size: 30px">ראש השנה</div><div style="margin-top: 6px; font-size: 16px; opacity: .8">מתנת חג שכולם מחכים לה</div></div>
-    <div class="occ rv"><span class="onum">02</span><div class="disp" style="font-size: 30px">פסח</div><div style="margin-top: 6px; font-size: 16px; opacity: .8">חופש אביב עם חוויה</div></div>
-    <div class="occ rv"><span class="onum">03</span><div class="disp" style="font-size: 30px">ימי הולדת</div><div style="margin-top: 6px; font-size: 16px; opacity: .8">יום שעובד/ת לא ישכחו</div></div>
-    <div class="occ rv"><span class="onum">04</span><div class="disp" style="font-size: 30px">סיום פרויקט</div><div style="margin-top: 6px; font-size: 16px; opacity: .8">תודה לצוות שסגר יעד</div></div>
-    <div class="occ rv"><span class="onum">05</span><div class="disp" style="font-size: 30px">ותק והצטיינות</div><div style="margin-top: 6px; font-size: 16px; opacity: .8">הכרה שמרגישים</div></div>
-    <div class="occ rv"><span class="onum">06</span><div class="disp" style="font-size: 30px">קליטת עובדים</div><div style="margin-top: 6px; font-size: 16px; opacity: .8">ברוכים הבאים בסטייל</div></div>
-  </div>
-</section>
-
-<!-- ============ KINETIC CTA ============ -->
-<section style="position: relative; padding: 80px 0 120px; overflow: hidden">
-  <div class="parx disp" style="font-size: clamp(64px, 10vw, 160px); white-space: nowrap; text-align: center; line-height: 1">החיים הם <span style="color: #FF006F">מיקס</span> של חוויות</div>
-  <div class="parx disp outline" style="font-size: clamp(64px, 10vw, 160px); white-space: nowrap; text-align: center; line-height: 1; animation-direction: reverse">גם בעבודה. גם בעבודה.</div>
-  <div class="rv" style="position: relative; max-width: 760px; margin: 64px auto 0; padding: 0 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 24px">
-    <p style="margin: 0; font-size: 22px; line-height: 1.55; color: rgba(255,255,255,.82)">ספרו לנו כמה עובדים ולאיזה אירוע – ואנחנו נבנה לכם הצעה.</p>
-    <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center">
-      <a href="#lead" class="btn" style="min-height: 64px; font-size: 21px; padding: 0 40px">אני רוצה הצעה לחברה</a>
-      <a href="tel:[מספר טלפון לעסקים]" class="btn ghost" style="min-height: 64px; font-size: 19px">או חייגו: [מספר טלפון לעסקים]</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer style="border-top: 1px solid rgba(255,255,255,.1); padding: 36px 24px">
-  <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font-size: 15px; color: rgba(255,255,255,.7)">
-    <div style="display: flex; align-items: center; gap: 12px">
-      <span style="font-family: Heebo, sans-serif; font-weight: 900; font-size: 24px; color: #FFFFFF; direction: ltr">toMix</span>
-      <span>עולם של חוויות שוות באמת</span>
-    </div>
-    <div style="display: flex; gap: 20px; flex-wrap: wrap">
-      <a href="https://www.to-mix.co.il/">לאתר toMix</a>
-      <a href="https://www.to-mix.co.il/mixcard/">toMix Card</a>
-      <span>[קישור למדיניות פרטיות]</span>
-    </div>
-  </div>
-</footer>
 
 </div>
-<script>
-(function(){
-  var hero=document.getElementById('hero'),tilt=document.getElementById('tilt'),glow=document.getElementById('glow');
-  var fine=window.matchMedia('(pointer: fine)').matches;
-  if(fine){
-    hero.addEventListener('mousemove',function(e){
-      var r=hero.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
-      tilt.style.transform='rotateX('+Math.round((0.5-py)*22)+'deg) rotateY('+Math.round((px-0.5)*28)+'deg)';
-      glow.style.left=Math.round(px*100)+'%';glow.style.top=Math.round(py*100)+'%';
-    });
-    hero.addEventListener('mouseleave',function(){tilt.style.transform='rotateX(0deg) rotateY(0deg)';});
-  }
-  var f=document.getElementById('leadForm');
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var name=(f.elements.name.value||'').trim(),co=(f.elements.company.value||'').trim();
-    // TODO: לחבר כאן שליחה ל-CRM / Webhook / Google Sheets
-    document.getElementById('tName').textContent=name.split(' ')[0];
-    document.getElementById('tCo').textContent=co;
-    document.getElementById('formWrap').hidden=true;
-    document.getElementById('thanks').hidden=false;
-  });
-})();
-</script>
+<script src="app.js"></script>
 </body>
 </html>
