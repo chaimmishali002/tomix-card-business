@@ -27,7 +27,7 @@ var SCRIPT_URL = '';
   // תמונה מקדימה: יוטיוב מחזיר ריבוע אפור 120x90 כשאין רזולוציה מסוימת – יורדים רזולוציה עד שיש תמונה אמיתית
   var thumb = document.getElementById('ytThumb');
   if (thumb) {
-    var sizes = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault', '0'], si = 0;
+    var sizes = ['sddefault', 'hqdefault', 'mqdefault', '0'], si = 0;
     var next = function () {
       si++;
       if (si < sizes.length) thumb.src = 'https://i.ytimg.com/vi/RXbBlem-SVc/' + sizes[si] + '.jpg';
