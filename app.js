@@ -24,6 +24,19 @@ var SCRIPT_URL = '';
 
   // ---- סרטון יוטיוב (נטען רק בלחיצה) ----
   var yt = document.getElementById('yt'), ytBtn = document.getElementById('ytPlay');
+  // תמונה מקדימה: יוטיוב מחזיר ריבוע אפור 120x90 כשאין רזולוציה מסוימת – יורדים רזולוציה עד שיש תמונה אמיתית
+  var thumb = document.getElementById('ytThumb');
+  if (thumb) {
+    var sizes = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault', '0'], si = 0;
+    var next = function () {
+      si++;
+      if (si < sizes.length) thumb.src = 'https://i.ytimg.com/vi/RXbBlem-SVc/' + sizes[si] + '.jpg';
+    };
+    var check = function () { if (thumb.naturalWidth && thumb.naturalWidth <= 120) next(); };
+    thumb.addEventListener('load', check);
+    thumb.addEventListener('error', next);
+    if (thumb.complete) { if (thumb.naturalWidth === 0) next(); else check(); }
+  }
   if (ytBtn) {
     ytBtn.addEventListener('click', function () {
       var f = document.createElement('iframe');
