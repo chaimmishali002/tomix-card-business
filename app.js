@@ -1,7 +1,7 @@
 /* toMix Card לעסקים – לוגיקת דף הנחיתה */
 
 // כתובת ה-Web App של Google Apps Script (מכניס לגיליון + שולח מייל להדס)
-var SCRIPT_URL = '';
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwyfAOViQCnrDaZQtbRXXkNN33n8Qo3DUcTL3QPjG-FEWTeBHVQSJv_vsQTcq2rbWxq/exec';
 
 (function () {
   // ---- כרטיס מגיב לעכבר ----
